@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd ">
+    
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<!-- To use this, spring-framework-5.*.*.RELEASE should be loaded -->
+    	<!-- mysql-connector-java-8.0.11 should be loaded -->
+    	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+    	<property name="url" value="jdbc:mysql://localhost:3306/BiliFans?useSSL=false"></property>
+    	<property name="username" value="root"></property>
+    	<property name="password" value="a13757407965b"></property>
+    </bean>
+    
+    <bean id="fansJDBCTemplate" class="com.bilicrawler.db.FansJDBCTemplate">
+    	<property name="dataSource" ref="dataSource"></property>
+    </bean>
+    
+    <bean id="initialUrl" class="com.bilicrawler.crawl.Url">
+    	<property name="url" value="https://api.bilibili.com/x/web-interface/card?mid=122879&amp;jsonp=jsonp&amp;article=true"></property>
+    </bean>
+    
+</beans>

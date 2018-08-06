@@ -1,0 +1,32 @@
+package com.bilicrawler.db;
+
+import java.util.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import com.bilicrawler.fans.*;
+
+public class FansStoreToMysql {
+	@SuppressWarnings("all")
+	
+	private String name;
+	private String registeTime;
+	private Integer followNumber;
+	private Integer fansNumber;
+	private Integer collectionNumber;
+	
+	public void getOneFan(Fans fan) {
+		this.name = fan.getName();
+		this.registeTime = fan.getRegisterTime();
+		this.followNumber = fan.getFollowNumber();
+		this.fansNumber = fan.getFansNumber();
+		this.collectionNumber = fan.getCollectionNumber();
+	}
+	
+	public void fanStore() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		FansJDBCTemplate fansJDBCTemplate = (FansJDBCTemplate) context.getBean("fansJDBCTemplate");
+		
+		fansJDBCTemplate.deleteAll();
+		fansJDBCTemplate.create(name, registeTime, followNumber, fansNumber, collectionNumber);
+	}
+}
