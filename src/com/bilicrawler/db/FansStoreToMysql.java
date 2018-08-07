@@ -10,23 +10,23 @@ public class FansStoreToMysql {
 	
 	private String name;
 	private String registeTime;
-	private Integer followNumber;
-	private Integer fansNumber;
-	private Integer collectionNumber;
+	private String followNumber;
+	private String fansNumber;
+	private String mid;
 	
 	public void getOneFan(Fans fan) {
 		this.name = fan.getName();
 		this.registeTime = fan.getRegisterTime();
 		this.followNumber = fan.getFollowNumber();
 		this.fansNumber = fan.getFansNumber();
-		this.collectionNumber = fan.getCollectionNumber();
+		this.mid = fan.getMid();
 	}
 	
 	public void fanStore() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 		FansJDBCTemplate fansJDBCTemplate = (FansJDBCTemplate) context.getBean("fansJDBCTemplate");
 		
-		fansJDBCTemplate.deleteAll();
-		fansJDBCTemplate.create(name, registeTime, followNumber, fansNumber, collectionNumber);
+		//fansJDBCTemplate.deleteAll();
+		fansJDBCTemplate.create(name, registeTime, followNumber, fansNumber, mid);
 	}
 }

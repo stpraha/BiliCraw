@@ -14,9 +14,9 @@ public class FansMapper implements RowMapper {
 		Fans fan = new Fans();
 		fan.setName(rs.getString("name"));
 		fan.setRegisterTime(rs.getString("registeTime"));
-		fan.setFollowNumber(rs.getInt("followNumber"));
-		fan.setFansNumber(rs.getInt("fansNumber"));
-		fan.setCollectionNumber(rs.getInt("collectionNumber"));
+		fan.setFollowNumber(rs.getString("followNumber"));
+		fan.setFansNumber(rs.getString("fansNumber"));
+		fan.setMid(rs.getString("mid"));
 		return fan;
 	}
 }

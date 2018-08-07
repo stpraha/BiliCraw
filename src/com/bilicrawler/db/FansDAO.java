@@ -14,7 +14,7 @@ public interface FansDAO {
 	    * This is the method to be used to create
 	    * a record in the Fans table.
 	    */
-	   public void create(String name, String registeTime, Integer follwNumber, Integer fansNumber, Integer collectionNumber);
+	   public void create(String name, String registeTime, String follwNumber, String fansNumber, String mid);
 	   /** 
 	    * This is the method to be used to list down
 	    * all the records from the Fans table.

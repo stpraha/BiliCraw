@@ -3,9 +3,9 @@ package com.bilicrawler.fans;
 public class Fans {
 	private String name;
 	private String registeTime;
-	private Integer followNumber;
-	private Integer fansNumber;
-	private Integer collectionNumber;
+	private String followNumber;
+	private String fansNumber;
+	private String mid;
 	
 	public void setName(String name) {
 		this.name = name;
@@ -15,16 +15,16 @@ public class Fans {
 		this.registeTime = time;
 	}
 	
-	public void setFollowNumber(int followNum) {
+	public void setFollowNumber(String followNum) {
 		this.followNumber = followNum;
 	}
 	
-	public void setFansNumber(int fansNum) {
+	public void setFansNumber(String fansNum) {
 		this.fansNumber = fansNum;
 	}
 	
-	public void setCollectionNumber(int collectionNum) {
-		this.collectionNumber = collectionNum;
+	public void setMid(String mid) {
+		this.mid = mid;
 	}
 	
 	public String getName() {
@@ -35,16 +35,16 @@ public class Fans {
 		return registeTime;
 	}
 	
-	public Integer getFollowNumber() {
+	public String getFollowNumber() {
 		return followNumber;
 	}
 	
-	public Integer getFansNumber() {
+	public String getFansNumber() {
 		return fansNumber;
 	}
 	
-	public Integer getCollectionNumber() {
-		return collectionNumber;
+	public String getMid() {
+		return mid;
 	}
 
 }

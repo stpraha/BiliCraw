@@ -15,10 +15,10 @@ public class FansJDBCTemplate implements FansDAO {
 		this.jdbcTemplateObject = new JdbcTemplate(dataSource);
 	}
 	@Override
-	public void create(String name, String registeTime, Integer followNumber, Integer fansNumber, Integer collectionNumber) {
-		String sql = "INSERT INTO Fans (name, registeTime, followNumber, fansNumber, collectionNumber) values (?, ?, ?, ?, ?)";
-		jdbcTemplateObject.update(sql, name, registeTime, followNumber, fansNumber, collectionNumber);
-		System.out.println("Create Record Name = " + name);
+	public void create(String name, String registeTime, String followNumber, String fansNumber, String mid) {
+		String sql = "INSERT INTO Fans (name, registeTime, followNumber, fansNumber, Mid) values (?, ?, ?, ?, ?)";
+		jdbcTemplateObject.update(sql, name, registeTime, followNumber, fansNumber, mid);
+		//System.out.println("Create Record Name = " + name);
 	}
 	
 	@Override
